@@ -7,8 +7,8 @@
     <!-- PRIMARY SEO META TAGS -->
     <title>AION 2 Patch Notes Archive — All Updates, Fixes & Event History</title>
     <meta name="title" content="AION 2 Patch Notes Archive — All Updates, Fixes & Event History">
-    <meta name="description" content="Browse the complete chronological archive of all AION 2 patch notes, updates, balance changes, and event guides. Filter and search historical patches for AION 2 PC.">
-    <meta name="keywords" content="AION 2 Patch Notes Archive, Aion 2 update history, Aion 2 past patches, Aion 2 changelog, Aion 2 patches list, Aion 2 updates tracker">
+    <meta name="description" content="Browse the complete chronological archive of all AION 2 patch notes, updates, balance changes, banwaves, and event guides. Filter and search historical patches for AION 2 PC.">
+    <meta name="keywords" content="AION 2 Patch Notes Archive, Aion 2 update history, Aion 2 past patches, Aion 2 changelog, Aion 2 patches list, Aion 2 updates tracker, Aion 2 banwave history">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="AION 2 Community Hub">
     <meta name="theme-color" content="#070a12">
@@ -24,7 +24,7 @@
     <meta property="og:site_name" content="AION 2 Patch Hub">
     <meta property="og:url" content="https://aionpatch.github.io/archive.html">
     <meta property="og:title" content="AION 2 Patch Notes Archive — Chronological Update History">
-    <meta property="og:description" content="Browse every AION 2 patch, class rework, and seasonal event. Complete changelogs and interactive tools preserved.">
+    <meta property="og:description" content="Browse every AION 2 patch, class rework, security banwave, and seasonal event. Complete changelogs and interactive tools preserved.">
     <meta property="og:image" content="https://clan.fastly.steamstatic.com/images/46074831/a480e65b0c35878fa89597399105a083aa35c900.png">
 
     <!-- SCHEMA.ORG JSON-LD (CollectionPage + BreadcrumbList) -->
@@ -36,13 +36,19 @@
           "@type": "CollectionPage",
           "name": "AION 2 Patch Notes Archive",
           "url": "https://aionpatch.github.io/archive.html",
-          "description": "Chronological archive and history of all official AION 2 updates, class balance changes, and major patches.",
+          "description": "Chronological archive and history of all official AION 2 updates, class balance changes, banwaves, and major patches.",
           "isPartOf": {
             "@type": "WebSite",
             "name": "AION 2 Patch Hub",
             "url": "https://aionpatch.github.io/"
           },
           "hasPart": [
+            {
+              "@type": "NewsArticle",
+              "headline": "AION 2 Security Update: 15,380 Accounts Restricted (Oct 21, 2026)",
+              "url": "https://aionpatch.github.io/patches/2026-10-21-security-banwave.html",
+              "datePublished": "2026-10-21T03:00:00+02:00"
+            },
             {
               "@type": "NewsArticle",
               "headline": "AION 2 Patch Notes (Oct 14, 2026) — Halloween Event & Abyss Guide",
@@ -100,7 +106,8 @@
                             gold: '#e5b84b',
                             pumpkin: '#ff6b1a',
                             purple: '#9d4edd',
-                            crimson: '#ef233c'
+                            crimson: '#ef233c',
+                            emerald: '#10b981'
                         }
                     }
                 }
@@ -112,7 +119,7 @@
             background-color: #070a12;
             background-image: 
                 radial-gradient(circle at 20% 20%, rgba(0, 210, 255, 0.07) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(157, 78, 221, 0.07) 0%, transparent 45%);
+                radial-gradient(circle at 80% 80%, rgba(239, 35, 60, 0.07) 0%, transparent 45%);
             color: #e2e8f0;
             font-family: 'Inter', sans-serif;
         }
@@ -153,7 +160,7 @@
             <div class="flex items-center gap-4">
                 <a href="./" class="px-3.5 py-1.5 rounded-lg bg-aion-cyan/15 border border-aion-cyan/40 text-aion-cyan hover:bg-aion-cyan/25 font-semibold text-xs tracking-wider uppercase transition flex items-center gap-1.5">
                     <i data-lucide="zap" class="w-4 h-4"></i>
-                    <span data-i18n="btn_latest">Latest Patch</span>
+                    <span data-i18n="btn_latest">Live Hub</span>
                 </a>
 
                 <!-- Language Switcher -->
@@ -189,7 +196,7 @@
                     AION 2 Patch Notes & Update History
                 </h1>
                 <p class="text-slate-300 text-sm sm:text-base leading-relaxed mt-2" data-i18n="archive_desc">
-                    Comprehensive chronological record of all official game updates, balance adjustments, seasonal events, and system enhancements for AION 2.
+                    Comprehensive chronological record of all official game updates, balance adjustments, banwaves, and event guides for AION 2.
                 </p>
             </div>
         </header>
@@ -198,29 +205,90 @@
         <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl glass-card border border-aion-border">
             <div class="flex flex-wrap items-center gap-2 text-xs">
                 <span class="text-slate-400 font-tech uppercase tracking-wider mr-1" data-i18n="filter_by">Filter:</span>
-                <button onclick="filterPatches('all')" class="filter-btn px-3 py-1.5 rounded-lg bg-aion-cyan text-slate-950 font-bold" data-filter="all" data-i18n="filter_all">All Patches</button>
+                <button onclick="filterPatches('all')" class="filter-btn px-3 py-1.5 rounded-lg bg-aion-cyan text-slate-950 font-bold" data-filter="all" data-i18n="filter_all">All Updates</button>
+                <button onclick="filterPatches('security')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium" data-filter="security" data-i18n="filter_security">Security & Banwave</button>
                 <button onclick="filterPatches('event')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium" data-filter="event" data-i18n="filter_event">Events</button>
                 <button onclick="filterPatches('balance')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium" data-filter="balance" data-i18n="filter_balance">Class Balance</button>
-                <button onclick="filterPatches('economy')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium" data-filter="economy" data-i18n="filter_economy">Shop & Economy</button>
             </div>
 
             <div class="text-xs text-slate-400">
-                <span data-i18n="total_tracked">Total Tracked Updates:</span> <strong class="text-white">1</strong>
+                <span data-i18n="total_tracked">Total Tracked Updates:</span> <strong class="text-white">2</strong>
             </div>
         </div>
 
         <!-- TIMELINE / LIST OF PATCHES -->
         <section class="space-y-6">
 
-            <!-- PATCH ENTRY 1: OCT 14, 2026 -->
+            <!-- PATCH ENTRY 1: OCT 21, 2026 (SECURITY BANWAVE) -->
+            <article class="patch-card glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border-l-4 border-l-red-500" data-category="security">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-5 mb-5">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2.5 mb-2">
+                            <span class="px-2.5 py-0.5 rounded bg-red-500/20 border border-red-500/40 text-red-400 text-xs font-tech font-bold uppercase tracking-wider">
+                                Latest Service Action
+                            </span>
+                            <span class="px-2.5 py-0.5 rounded bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-tech font-semibold">
+                                🚨 Security & Anti-Bot Enforcement
+                            </span>
+                            <time datetime="2026-10-21" class="text-xs font-tech text-slate-400 tracking-wider">
+                                OCT 21, 2026 (CEST) / OCT 20 (PDT)
+                            </time>
+                        </div>
+                        <h2 class="font-cinzel text-xl sm:text-2xl font-bold text-white hover:text-red-400 transition">
+                            <a href="./patches/2026-10-21-security-banwave.html">
+                                AION 2 Security Update: 15,380 Accounts Restricted (Banwave & Security Locks)
+                            </a>
+                        </h2>
+                    </div>
+
+                    <div class="flex items-center gap-3 shrink-0">
+                        <a href="./patches/2026-10-21-security-banwave.html" class="px-4 py-2 rounded-xl bg-red-500 text-white font-bold text-xs uppercase tracking-wider hover:bg-red-400 transition flex items-center gap-1.5 shadow-lg shadow-red-500/20">
+                            <span data-i18n="btn_read_patch">Read Full Report</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- KEY HIGHLIGHTS GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
+                    <div class="bg-slate-900/70 p-3.5 rounded-xl border border-slate-800/80">
+                        <strong class="text-red-400 block mb-1">🛑 15,380 Accounts Banned</strong>
+                        <p class="text-slate-400">Integrated account bans executed for macro bots, gold farming networks, and RMT real-money trading.</p>
+                    </div>
+                    <div class="bg-slate-900/70 p-3.5 rounded-xl border border-slate-800/80">
+                        <strong class="text-amber-400 block mb-1">🔒 Temporary Security Locks</strong>
+                        <p class="text-slate-400">Precautionary item/account defense triggered for unfamiliar hardware/IPs. Unlocked via help.plaync.com ticket.</p>
+                    </div>
+                    <div class="bg-slate-900/70 p-3.5 rounded-xl border border-slate-800/80">
+                        <strong class="text-emerald-400 block mb-1">⚔️ Grinding Safe Confirmed</strong>
+                        <p class="text-slate-400">NCSoft explicitly confirms normal manual play and intense grinding sessions are 100% unaffected.</p>
+                    </div>
+                </div>
+
+                <!-- TAGS -->
+                <div class="flex flex-wrap items-center justify-between gap-3 mt-5 pt-4 border-t border-slate-800/60 text-xs">
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-[11px]">#Banwave</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-[11px]">#AntiCheat</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-[11px]">#SecurityLock</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-[11px]">#RMTBan</span>
+                    </div>
+                    <a href="https://store.steampowered.com/news/app/3393110/view/675135430408011787" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-red-400 transition flex items-center gap-1">
+                        <span data-i18n="steam_source">Official Steam Changelog</span>
+                        <i data-lucide="external-link" class="w-3 h-3"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- PATCH ENTRY 2: OCT 14, 2026 (HALLOWEEN & ABYSS) -->
             <article class="patch-card glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border-l-4 border-l-aion-pumpkin" data-category="event balance economy">
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-800 pb-5 mb-5">
                     <div>
                         <div class="flex flex-wrap items-center gap-2.5 mb-2">
-                            <span class="px-2.5 py-0.5 rounded bg-aion-cyan/20 border border-aion-cyan/40 text-aion-cyan text-xs font-tech font-bold uppercase tracking-wider">
-                                Current Active Version
+                            <span class="px-2.5 py-0.5 rounded bg-aion-pumpkin/20 border border-aion-pumpkin/40 text-aion-pumpkin text-xs font-tech font-bold uppercase tracking-wider">
+                                Active Major Update
                             </span>
-                            <span class="px-2.5 py-0.5 rounded bg-aion-pumpkin/20 border border-aion-pumpkin/40 text-aion-pumpkin text-xs font-tech font-semibold">
+                            <span class="px-2.5 py-0.5 rounded bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-tech font-semibold">
                                 🎃 Halloween & Abyss Update
                             </span>
                             <time datetime="2026-10-14" class="text-xs font-tech text-slate-400 tracking-wider">
@@ -301,7 +369,7 @@
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <p data-i18n="footer_copy">AION 2 Community Patch Archive • All Patches Cataloged</p>
             <div class="flex items-center gap-4">
-                <a href="./" class="hover:text-white transition" data-i18n="footer_home">Home (Latest Patch)</a>
+                <a href="./" class="hover:text-white transition" data-i18n="footer_home">Home (Live Tracker)</a>
                 <a href="./sitemap.xml" class="hover:text-white transition">Sitemap XML</a>
             </div>
         </div>
@@ -315,18 +383,18 @@
             en: {
                 nav_badge: "Archive",
                 nav_sub: "Update History & Changelog Tracker",
-                btn_latest: "Latest Patch",
+                btn_latest: "Live Hub",
                 breadcrumb_archive: "Patch Notes Archive",
                 archive_tag: "Historical Changelogs & Timelines",
                 archive_title: "AION 2 Patch Notes & Update History",
-                archive_desc: "Comprehensive chronological record of all official game updates, balance adjustments, seasonal events, and system enhancements for AION 2.",
+                archive_desc: "Comprehensive chronological record of all official game updates, balance adjustments, banwaves, and event guides for AION 2.",
                 filter_by: "Filter:",
-                filter_all: "All Patches",
+                filter_all: "All Updates",
+                filter_security: "Security & Banwave",
                 filter_event: "Events",
                 filter_balance: "Class Balance",
-                filter_economy: "Shop & Economy",
                 total_tracked: "Total Tracked Updates:",
-                btn_read_patch: "Read Full Patch",
+                btn_read_patch: "Read Report",
                 steam_source: "Official Steam Changelog",
                 faq_archive_title: "How AION 2 Patches Work",
                 faq_arch_q1: "When do AION 2 patches typically release?",
@@ -334,23 +402,23 @@
                 faq_arch_q2: "Are historical patch calculations still valid?",
                 faq_arch_a2: "Each archived patch note retains its original snapshot, calculators, and values accurate to that specific game version for historical accuracy.",
                 footer_copy: "AION 2 Community Patch Archive • All Patches Cataloged",
-                footer_home: "Home (Latest Patch)"
+                footer_home: "Home (Live Tracker)"
             },
             it: {
                 nav_badge: "Archivio",
                 nav_sub: "Storico Aggiornamenti & Tracker Patch",
-                btn_latest: "Ultima Patch",
+                btn_latest: "Tracker Live",
                 breadcrumb_archive: "Archivio Note Patch",
                 archive_tag: "Changelog Storici & Cronologia",
                 archive_title: "Storico Note della Patch & Aggiornamenti AION 2",
-                archive_desc: "Archivio cronologico completo di tutti gli aggiornamenti ufficiali, bilanciamenti di classe, eventi stagionali e miglioramenti di sistema per AION 2.",
+                archive_desc: "Archivio cronologico completo di tutti gli aggiornamenti ufficiali, bilanciamenti, banwave e guide evento per AION 2.",
                 filter_by: "Filtra per:",
-                filter_all: "Tutte le Patch",
+                filter_all: "Tutti gli Update",
+                filter_security: "Sicurezza & Banwave",
                 filter_event: "Eventi",
                 filter_balance: "Bilanciamento Classi",
-                filter_economy: "Shop & Economia",
                 total_tracked: "Aggiornamenti Tracciati:",
-                btn_read_patch: "Leggi Patch Completa",
+                btn_read_patch: "Leggi Report",
                 steam_source: "Changelog Ufficiale su Steam",
                 faq_archive_title: "Come Funzionano le Patch di AION 2",
                 faq_arch_q1: "Quando escono solitamente le patch di AION 2?",
@@ -358,7 +426,7 @@
                 faq_arch_q2: "I calcoli delle vecchie patch rimangono validi?",
                 faq_arch_a2: "Ogni nota di patch archiviata conserva le tabelle, i calcolatori e i valori originali esatti di quella specifica versione di gioco.",
                 footer_copy: "Archivio Patch Community AION 2 • Tutte le Patch Tracciate",
-                footer_home: "Home (Ultima Patch)"
+                footer_home: "Home (Tracker Live)"
             }
         };
 
