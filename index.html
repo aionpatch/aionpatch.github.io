@@ -309,6 +309,13 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #00d2ff;
         }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="min-h-screen selection:bg-aion-cyan selection:text-slate-950">
@@ -316,7 +323,7 @@
     <!-- [BLOCK 1: SITE NAVBAR & GLOBAL ACTIONS]                                  -->
     <!-- ========================================================================= -->
     <nav aria-label="Main Navigation" class="sticky top-0 z-50 glass-card border-b border-aion-border/80 px-4 py-3">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div class="flex items-center gap-3">
                 <a href="./" class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 via-aion-purple/30 to-red-500/20 border border-cyan-500/50 flex items-center justify-center shadow-lg shadow-cyan-500/10">
                     <span class="font-cinzel font-extrabold text-xl text-cyan-300">A2</span>
@@ -372,32 +379,32 @@
     <!-- ========================================================================= -->
     <!-- [MASTER TAB SWITCHER: FLUID ZERO-RELOAD & DEEP LINKING]                   -->
     <!-- ========================================================================= -->
-    <aside aria-label="Update Tabs" class="sticky top-[61px] z-40 bg-[#090e1a]/95 backdrop-blur-md border-b border-aion-border py-2.5 px-4 shadow-xl">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div class="flex items-center gap-2 w-full sm:w-auto">
+        <aside aria-label="Update Tabs" class="sticky top-[64px] z-40 bg-[#090e1a]/95 backdrop-blur-md border-b border-aion-border py-2 px-4 shadow-xl">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 max-w-full">
                 <!-- Tab Button 1: Oct 28 Patch (ACTIVE BY DEFAULT) -->
-                <button id="tab-btn-oct28" onclick="switchTab('oct28')" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-gradient-to-r from-cyan-500/20 to-aion-purple/20 border-2 border-cyan-400 text-white shadow-lg shadow-cyan-500/20">
-                    <span data-i18n="tab_btn_oct28">⚔️ OCT 28: Hard Modes, Class Buffs & Skins</span>
-                    <span class="animate-pulse bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 font-extrabold px-2 py-0.5 rounded text-[10px] tracking-widest shadow-md shadow-cyan-500/30" data-i18n="tab_btn_oct28_badge">NEW PATCH</span>
+                <button id="tab-btn-oct28" onclick="switchTab('oct28')" class="shrink-0 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-gradient-to-r from-cyan-500/20 to-aion-purple/20 border-2 border-cyan-400 text-white shadow-lg shadow-cyan-500/20">
+                    <span data-i18n="tab_btn_oct28">⚔️ OCT 28: Hard Modes & Skins</span>
+                    <span class="animate-pulse bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 font-extrabold px-1.5 py-0.5 rounded text-[10px] tracking-widest shadow-md shadow-cyan-500/30" data-i18n="tab_btn_oct28_badge">NEW PATCH</span>
                 </button>
 
                 <!-- Tab Button 2: Ludra Awakens Event (Nov 4) -->
-                <button id="tab-btn-ludra" onclick="switchTab('ludra')" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-slate-900/60 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-500/50">
-                    <span data-i18n="tab_btn_ludra">🐉 NOV 4: Ludra Awakens Raid Event</span>
+                <button id="tab-btn-ludra" onclick="switchTab('ludra')" class="shrink-0 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-slate-900/60 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-500/50">
+                    <span data-i18n="tab_btn_ludra">🐉 NOV 4: Ludra Awakens</span>
                     <span class="bg-red-500/20 text-red-300 border border-red-500/40 font-bold px-1.5 py-0.5 rounded text-[10px] tracking-wider" data-i18n="tab_btn_ludra_badge">UPCOMING RAID</span>
                 </button>
 
                 <!-- Tab Button 3: Halloween & Abyss (Oct 14) -->
-                <button id="tab-btn-oct14" onclick="switchTab('oct14')" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-slate-900/60 border border-slate-700 text-slate-300 hover:text-white hover:border-amber-500/50">
-                    <span data-i18n="tab_btn_oct14">🎃 OCT 14: Halloween & Abyss Patch</span>
+                <button id="tab-btn-oct14" onclick="switchTab('oct14')" class="shrink-0 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-slate-900/60 border border-slate-700 text-slate-300 hover:text-white hover:border-amber-500/50">
+                    <span data-i18n="tab_btn_oct14">🎃 OCT 14: Halloween & Abyss</span>
                     <span class="bg-slate-800 text-slate-400 font-bold px-1.5 py-0.5 rounded text-[10px] tracking-wider" data-i18n="tab_btn_oct14_badge">ARCHIVE</span>
                 </button>
             </div>
 
-            <!-- Hint & Deep Link Info -->
-            <div class="text-[11px] font-tech text-slate-400 flex items-center gap-2">
-                <i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400"></i>
-                <span data-i18n="tab_switcher_hint">Switch between updates with zero page reload. Direct deep links supported (#oct28 / #ludra / #oct14).</span>
+            <!-- Hint & Deep Link Info (Sleek, Compact Pill, Never Collides) -->
+            <div class="hidden xl:flex items-center gap-2 text-[11px] font-tech text-slate-400 shrink-0 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800" title="Direct deep links supported (#oct28 / #ludra / #oct14)">
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+                <span data-i18n="tab_switcher_hint">Instant Switch (#oct28 • #ludra • #oct14)</span>
             </div>
         </div>
     </aside>
@@ -1107,12 +1114,15 @@
             <!-- ========================================================================= -->
             <!-- SECTION 6: ✨ DEDICATED NEW SKINS SECTION: DAEVA LOOKBOOK VOL. 3           -->
             <!-- ========================================================================= -->
-            <section id="new-skins-oct28" class="space-y-6 scroll-mt-28">
+            <section id="new-skins-oct28" class="space-y-8 scroll-mt-28">
                 <!-- Visual Banner & Section Title -->
-                <div class="relative overflow-hidden rounded-3xl border-2 border-purple-500/40 shadow-2xl shadow-purple-500/20 bg-gradient-to-r from-purple-950/80 via-slate-900 to-indigo-950/80 p-6 sm:p-10">
-                    <div class="absolute -right-10 -bottom-10 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
-                    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div class="space-y-2 max-w-2xl">
+                <div class="relative overflow-hidden rounded-3xl border-2 border-purple-500/40 shadow-2xl shadow-purple-500/20 bg-gradient-to-r from-[#0d071a] via-[#100a26] to-[#0a0f24] p-6 sm:p-10">
+                    <!-- Background Visual Art -->
+                    <div class="absolute inset-0 opacity-25 bg-cover bg-center pointer-events-none mix-blend-screen" style="background-image: url('https://fizz-download.playnccdn.com/download/v2/buckets/marketing-platform/files/1a17ff8b70e-345bdbdb-6f68-490c-b377-8dd84316ad83');"></div>
+                    <div class="absolute -right-10 -bottom-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                        <div class="space-y-3 max-w-2xl">
                             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 text-xs font-tech font-bold tracking-widest uppercase">
                                 <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-300"></i>
                                 <span data-i18n="oct28_skins_sub">Official Atelier Collection & Daeva Lookbook Vol. 3</span>
@@ -1123,9 +1133,25 @@
                             <p class="text-xs sm:text-sm text-purple-200 font-tech tracking-wide" data-i18n="oct28_skins_period">
                                 Sale Period: October 28, 2026 – November 11, 2026 (CET) • (Oct 27 PDT – Nov 10 PST)
                             </p>
+                            <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+                                <span class="px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold font-tech">
+                                    💰 +4,350 Mileage per Outfit Set
+                                </span>
+                                <span class="px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/40 font-semibold font-tech" data-i18n="oct28_skin_dyeable_tag">
+                                    🎨 Dyeable: YES (Palette Customization)
+                                </span>
+                            </div>
                         </div>
-                        <div class="shrink-0">
-                            <a href="https://aion2.plaync.com/en-us/conts/261028_lookbook" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-amber-400 hover:from-purple-400 hover:via-pink-400 hover:to-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-xl shadow-purple-500/30 transform hover:-translate-y-0.5">
+
+                        <!-- Right Side: Dual Character Artwork & CTA -->
+                        <div class="flex flex-col sm:flex-row items-center gap-6 shrink-0">
+                            <!-- Character Duo Showcase Cutout -->
+                            <div class="hidden sm:flex items-center -space-x-12 opacity-90 hover:opacity-100 transition-opacity duration-300">
+                                <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-main-character-1.webp" alt="Lookbook Vol. 3 Character Preview 1" loading="lazy" class="w-36 h-48 object-cover object-top drop-shadow-[0_10px_20px_rgba(168,85,247,0.4)]">
+                                <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-main-character-2.webp" alt="Lookbook Vol. 3 Character Preview 2" loading="lazy" class="w-36 h-48 object-cover object-top drop-shadow-[0_10px_20px_rgba(236,72,153,0.4)]">
+                            </div>
+
+                            <a href="https://aion2.plaync.com/en-us/conts/261028_lookbook" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-amber-400 hover:from-purple-400 hover:via-pink-400 hover:to-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-xl shadow-purple-500/30 transform hover:-translate-y-0.5 shrink-0">
                                 <span data-i18n="oct28_skins_cta">View Official Daeva Lookbook Vol. 3 ↗</span>
                                 <i data-lucide="external-link" class="w-4 h-4"></i>
                             </a>
@@ -1133,126 +1159,285 @@
                     </div>
                 </div>
 
-                <!-- 4 HIGH-IMPACT SKIN CARDS -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    <!-- Card 1: New Armor Skin Sets -->
-                    <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-purple-400 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-tech uppercase tracking-wider text-purple-300">Outfit Sets • Closet - Armor</span>
-                            <span class="text-xs font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">$29.99 / +4,350 Mileage</span>
+                <!-- 1. FEATURED OUTFIT 1: VULPINE SUNSHOWER -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-purple-500/30 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-purple-500/20 pb-4">
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🦊</span>
+                                <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-white">
+                                    Vulpine Sunshower (Skin: Set)
+                                </h3>
+                                <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/30">Dyeable: YES</span>
+                            </div>
+                            <p class="text-xs text-slate-400" data-i18n="oct28_skin_c1_desc">Path: <em>[In-Game Menu] ➔ [Shop] ➔ [Atelier] ➔ [Outfit Sets] ➔ [Skins]</em>. Stored in <em>[Closet - Armor]</em>.</p>
                         </div>
-                        <h3 class="font-cinzel text-lg font-bold text-white flex items-center gap-2" data-i18n="oct28_skin_c1_title">
-                            <i data-lucide="shirt" class="w-5 h-5 text-purple-400"></i>
-                            New Armor Skin Sets ($29.99 | +4,350 Mileage)
-                        </h3>
-                        <p class="text-xs text-slate-400" data-i18n="oct28_skin_c1_desc">Path: <em>[In-Game Menu] ➔ [Shop] ➔ [Atelier] ➔ [Outfit Sets] ➔ [Skins]</em>. Stored in <em>[Closet - Armor]</em>. Customizable & Dyeable: <strong>YES</strong>.</p>
-                        
-                        <div class="space-y-3 pt-2">
-                            <!-- Vulpine Sunshower -->
-                            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                                <div class="flex items-center justify-between mb-1">
-                                    <strong class="text-amber-300 font-cinzel text-sm">🦊 Vulpine Sunshower (Skin: Set)</strong>
-                                    <span class="text-[11px] font-tech text-slate-400">$29.99</span>
-                                </div>
-                                <p class="text-xs text-slate-300" data-i18n="oct28_skin_c1_set1">🦊 <strong>Vulpine Sunshower (Skin: Set)</strong> — $29.99 (6 Pieces: Breastplate x1, Greaves x1, Helm x1, Gloves x1, Boots x1, Cloak x1).</p>
-                            </div>
-                            <!-- No-Nonsense Maid -->
-                            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                                <div class="flex items-center justify-between mb-1">
-                                    <strong class="text-pink-300 font-cinzel text-sm">🎀 No-Nonsense Maid (Skin: Set) (Bound)</strong>
-                                    <span class="text-[11px] font-tech text-slate-400">$29.99</span>
-                                </div>
-                                <p class="text-xs text-slate-300" data-i18n="oct28_skin_c1_set2">🎀 <strong>No-Nonsense Maid (Skin: Set) (Bound)</strong> — $29.99 (4 Pieces: Breastplate x1, Greaves x1, Gloves x1, Boots x1).</p>
-                            </div>
+                        <div class="text-right sm:text-right shrink-0">
+                            <span class="text-lg font-cinzel font-bold text-amber-300 block">$29.99</span>
+                            <span class="text-xs font-tech text-purple-300">+4,350 Mileage Earned</span>
                         </div>
                     </div>
 
-                    <!-- Card 2: New Weapon Skins: "Secret Teatime" -->
-                    <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-pink-400 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-tech uppercase tracking-wider text-pink-300">Weapon Skins • All 8 Classes</span>
-                            <span class="text-xs font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">$11.99 / +1,750 Mileage</span>
+                    <!-- Visual Grid: Male & Female Character Renders + Macro Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                        <!-- Model 1 (Male) -->
+                        <div class="relative rounded-2xl overflow-hidden border border-purple-500/30 bg-gradient-to-b from-purple-950/40 via-slate-900 to-[#070a14] flex flex-col group">
+                            <div class="relative aspect-[3/4] overflow-hidden bg-slate-950">
+                                <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-1-character-1.webp" alt="Vulpine Sunshower Male Model" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/90 border-t border-purple-500/20 text-center">
+                                <span class="text-xs font-cinzel font-bold text-amber-300" data-i18n="oct28_skin_vulpine_male">Male Model — Divine Fox Regalia</span>
+                            </div>
                         </div>
-                        <h3 class="font-cinzel text-lg font-bold text-white flex items-center gap-2" data-i18n="oct28_skin_c2_title">
-                            <i data-lucide="sword" class="w-5 h-5 text-pink-400"></i>
-                            New Weapon Skins: 'Secret Teatime' ($11.99 | +1,750 Mileage)
-                        </h3>
-                        <p class="text-xs text-slate-400" data-i18n="oct28_skin_c2_desc">Path: <em>[Shop] ➔ [Atelier] ➔ [Weapon/Wings/Pet] ➔ [Weapon Skin]</em>. Customizable: <strong>YES</strong>. Available for all 8 weapon archetypes.</p>
 
-                        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-2">
-                            <p class="font-semibold text-pink-200">Available Archetypes for Every Class:</p>
-                            <p class="leading-relaxed" data-i18n="oct28_skin_c2_weapons">Greatsword (Gladiator), Longsword (Templar), Dagger (Assassin), Bow (Ranger), Spellbook (Sorcerer), Orb (Spiritmaster), Mace (Cleric), Staff (Chanter).</p>
-                            <div class="flex items-center gap-2 pt-2 text-[11px] text-slate-400">
-                                <i data-lucide="palette" class="w-3.5 h-3.5 text-pink-400"></i>
-                                <span>Can be customized and equipped inside the Atelier Weapon Skin wardrobe.</span>
+                        <!-- Model 2 (Female) -->
+                        <div class="relative rounded-2xl overflow-hidden border border-purple-500/30 bg-gradient-to-b from-purple-950/40 via-slate-900 to-[#070a14] flex flex-col group">
+                            <div class="relative aspect-[3/4] overflow-hidden bg-slate-950">
+                                <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-1-character-2.webp" alt="Vulpine Sunshower Female Model" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/90 border-t border-purple-500/20 text-center">
+                                <span class="text-xs font-cinzel font-bold text-amber-300" data-i18n="oct28_skin_vulpine_female">Female Model — Celestial Kitsune</span>
+                            </div>
+                        </div>
+
+                        <!-- Macro Details & Specifications -->
+                        <div class="flex flex-col justify-between space-y-4">
+                            <div>
+                                <h4 class="text-xs font-tech font-bold uppercase tracking-wider text-purple-300 mb-3" data-i18n="oct28_skin_macro_details">
+                                    Craftsmanship & Macro Details
+                                </h4>
+                                <!-- 4 Thumbnails Gallery -->
+                                <div class="grid grid-cols-2 gap-2.5">
+                                    <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900/80 group">
+                                        <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-1-detail-1.webp" alt="Fox Mask Detail" loading="lazy" class="w-full h-24 object-cover object-center transition-transform duration-300 group-hover:scale-110">
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 px-1.5 py-1 text-[10px] text-center font-tech text-slate-300" data-i18n="oct28_skin_vulpine_det1">
+                                            Fox Mask
+                                        </div>
+                                    </div>
+                                    <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900/80 group">
+                                        <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-1-detail-2.webp" alt="Embroidered Robe Detail" loading="lazy" class="w-full h-24 object-cover object-center transition-transform duration-300 group-hover:scale-110">
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 px-1.5 py-1 text-[10px] text-center font-tech text-slate-300" data-i18n="oct28_skin_vulpine_det2">
+                                            Embroidered Robe
+                                        </div>
+                                    </div>
+                                    <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900/80 group">
+                                        <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-1-detail-3.webp" alt="Nine Tails Cloak Detail" loading="lazy" class="w-full h-24 object-cover object-center transition-transform duration-300 group-hover:scale-110">
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 px-1.5 py-1 text-[10px] text-center font-tech text-slate-300" data-i18n="oct28_skin_vulpine_det3">
+                                            Nine Tails Cloak
+                                        </div>
+                                    </div>
+                                    <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900/80 group">
+                                        <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-1-detail-4.webp" alt="Armored Boots Detail" loading="lazy" class="w-full h-24 object-cover object-center transition-transform duration-300 group-hover:scale-110">
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 px-1.5 py-1 text-[10px] text-center font-tech text-slate-300" data-i18n="oct28_skin_vulpine_det4">
+                                            Armored Boots
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Set Pieces List -->
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+                                <span class="text-xs font-semibold text-amber-300 uppercase tracking-wider block" data-i18n="oct28_skin_includes">
+                                    Included in Outfit Set:
+                                </span>
+                                <p class="text-xs text-slate-300 leading-relaxed" data-i18n="oct28_skin_c1_set1">
+                                    🦊 <strong>Vulpine Sunshower (Skin: Set)</strong> — $29.99 (6 Pieces: Breastplate x1, Greaves x1, Helm x1, Gloves x1, Boots x1, Cloak x1).
+                                </p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Card 3: New Wings & New Pets -->
-                    <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyan-400 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-tech uppercase tracking-wider text-cyan-300">Wings & Companion Pets</span>
-                            <span class="text-xs font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">$19.99 / +2,900 Mileage</span>
+                <!-- 2. FEATURED OUTFIT 2: NO-NONSENSE MAID -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 border-2 border-pink-500/30 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-pink-500/20 pb-4">
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🎀</span>
+                                <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-white">
+                                    No-Nonsense Maid (Skin: Set) (Bound)
+                                </h3>
+                                <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/30">Dyeable: YES</span>
+                            </div>
+                            <p class="text-xs text-slate-400" data-i18n="oct28_skin_c1_desc">Path: <em>[In-Game Menu] ➔ [Shop] ➔ [Atelier] ➔ [Outfit Sets] ➔ [Skins]</em>. Stored in <em>[Closet - Armor]</em>.</p>
                         </div>
-                        <h3 class="font-cinzel text-lg font-bold text-white flex items-center gap-2" data-i18n="oct28_skin_c3_title">
-                            <i data-lucide="feather" class="w-5 h-5 text-cyan-400"></i>
-                            New Wings & Pets ($19.99 | +2,900 Mileage)
-                        </h3>
-
-                        <div class="space-y-2.5 text-xs">
-                            <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
-                                <span class="text-base">🪽</span>
-                                <div>
-                                    <strong class="text-cyan-300 block">Maid Ribbon Wings (Wings Skin)</strong>
-                                    <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c3_wings">🪽 <strong>Maid Ribbon Wings (Wings Skin)</strong> — $19.99 (Limit: 1 per character, Customize: No).</p>
-                                </div>
-                            </div>
-                            <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
-                                <span class="text-base">🔥</span>
-                                <div>
-                                    <strong class="text-purple-300 block">Pet: Azure Flame Kumiho</strong>
-                                    <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c3_pet1">🔥 <strong>Pet: Azure Flame Kumiho</strong> — $19.99 (Limit: 1 per server, registered in <em>[Pet]</em> menu).</p>
-                                </div>
-                            </div>
-                            <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
-                                <span class="text-base">🐶</span>
-                                <div>
-                                    <strong class="text-pink-300 block">Pet: Glossy Pink Puppy</strong>
-                                    <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c3_pet2">🐶 <strong>Pet: Glossy Pink Puppy</strong> — $19.99 (Limit: 1 per server, registered in <em>[Pet]</em> menu).</p>
-                                </div>
-                            </div>
+                        <div class="text-right sm:text-right shrink-0">
+                            <span class="text-lg font-cinzel font-bold text-amber-300 block">$29.99</span>
+                            <span class="text-xs font-tech text-pink-300">+4,350 Mileage Earned</span>
                         </div>
                     </div>
 
-                    <!-- Card 4: New Helms & Decor Accessories (300 Quna) -->
-                    <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-amber-400 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-tech uppercase tracking-wider text-amber-300">Helms, Eyewear & Jewelry</span>
-                            <span class="text-xs font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">300 Quna Each</span>
+                    <!-- Visual Grid: Pose A & Pose B Character Renders + Macro Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                        <!-- Pose A -->
+                        <div class="relative rounded-2xl overflow-hidden border border-pink-500/30 bg-gradient-to-b from-pink-950/40 via-slate-900 to-[#070a14] flex flex-col group">
+                            <div class="relative aspect-[3/4] overflow-hidden bg-slate-950">
+                                <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-2-character-1.webp" alt="No-Nonsense Maid Pose 1" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/90 border-t border-pink-500/20 text-center">
+                                <span class="text-xs font-cinzel font-bold text-pink-300" data-i18n="oct28_skin_maid_pose1">Victorian Battle Maid (Front Pose)</span>
+                            </div>
                         </div>
-                        <h3 class="font-cinzel text-lg font-bold text-white flex items-center gap-2" data-i18n="oct28_skin_c4_title">
-                            <i data-lucide="gem" class="w-5 h-5 text-amber-400"></i>
-                            New Helms & Decor Accessories (300 Quna Each)
-                        </h3>
 
-                        <div class="space-y-2.5 text-xs text-slate-300">
-                            <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                                <strong class="text-white block mb-0.5">🎭 Helms (Closet - Armor • Dyeable: YES):</strong>
-                                <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c4_helms"><strong>2 Helms (Closet - Armor, Customizable: YES):</strong> Black Crow Mask (Skin) & Dark Maid Hairband (Skin) — 300 Quna each.</p>
+                        <!-- Pose B -->
+                        <div class="relative rounded-2xl overflow-hidden border border-pink-500/30 bg-gradient-to-b from-pink-950/40 via-slate-900 to-[#070a14] flex flex-col group">
+                            <div class="relative aspect-[3/4] overflow-hidden bg-slate-950">
+                                <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-2-character-2.webp" alt="No-Nonsense Maid Pose 2" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
                             </div>
-                            <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                                <strong class="text-white block mb-0.5">👓 Eyewear & Face Decor (Closet - Decor):</strong>
-                                <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c4_glasses"><strong>3 Glasses (Closet - Decor, Customize: No):</strong> Red Devil Glasses (Limit 1/server), Silver Line Glasses, Silver Face Chain — 300 Quna each.</p>
+                            <div class="p-3.5 bg-slate-900/90 border-t border-pink-500/20 text-center">
+                                <span class="text-xs font-cinzel font-bold text-pink-300" data-i18n="oct28_skin_maid_pose2">Classic Frilled Apron (Action Pose)</span>
                             </div>
-                            <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800">
-                                <strong class="text-white block mb-0.5">💍 Aesthetic Jewelry Sets:</strong>
-                                <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c4_jewels"><strong>6 Aesthetic Jewelry Pieces (3 Sets Earrings & Necklace, 300 Quna each):</strong> Soaring / Ascending, Rider's, Midnight Teatime.</p>
+                        </div>
+
+                        <!-- Macro Details & Specifications -->
+                        <div class="flex flex-col justify-between space-y-4">
+                            <div>
+                                <h4 class="text-xs font-tech font-bold uppercase tracking-wider text-pink-300 mb-3" data-i18n="oct28_skin_macro_details">
+                                    Craftsmanship & Macro Details
+                                </h4>
+                                <!-- 4 Thumbnails Gallery -->
+                                <div class="grid grid-cols-2 gap-2.5">
+                                    <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900/80 group">
+                                        <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-2-detail-1.webp" alt="Frilled Hairband Detail" loading="lazy" class="w-full h-24 object-cover object-center transition-transform duration-300 group-hover:scale-110">
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 px-1.5 py-1 text-[10px] text-center font-tech text-slate-300" data-i18n="oct28_skin_maid_det1">
+                                            Frilled Hairband
+                                        </div>
+                                    </div>
+                                    <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900/80 group">
+                                        <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-2-detail-2.webp" alt="Pinafore Apron Detail" loading="lazy" class="w-full h-24 object-cover object-center transition-transform duration-300 group-hover:scale-110">
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 px-1.5 py-1 text-[10px] text-center font-tech text-slate-300" data-i18n="oct28_skin_maid_det2">
+                                            Pinafore Apron
+                                        </div>
+                                    </div>
+                                    <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900/80 group">
+                                        <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-2-detail-3.webp" alt="Lace Cuffs Detail" loading="lazy" class="w-full h-24 object-cover object-center transition-transform duration-300 group-hover:scale-110">
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 px-1.5 py-1 text-[10px] text-center font-tech text-slate-300" data-i18n="oct28_skin_maid_det3">
+                                            Lace Cuffs
+                                        </div>
+                                    </div>
+                                    <div class="relative rounded-xl overflow-hidden border border-slate-700 bg-slate-900/80 group">
+                                        <img src="https://assets.playnccdn.com/res/aion2/update/2026/global/261028_lookbook/pc/img/section-2-detail-4.webp" alt="Ribbon Pumps Detail" loading="lazy" class="w-full h-24 object-cover object-center transition-transform duration-300 group-hover:scale-110">
+                                        <div class="absolute inset-x-0 bottom-0 bg-slate-950/90 px-1.5 py-1 text-[10px] text-center font-tech text-slate-300" data-i18n="oct28_skin_maid_det4">
+                                            Ribbon Pumps
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Set Pieces List -->
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+                                <span class="text-xs font-semibold text-pink-300 uppercase tracking-wider block" data-i18n="oct28_skin_includes">
+                                    Included in Outfit Set:
+                                </span>
+                                <p class="text-xs text-slate-300 leading-relaxed" data-i18n="oct28_skin_c1_set2">
+                                    🎀 <strong>No-Nonsense Maid (Skin: Set) (Bound)</strong> — $29.99 (4 Pieces: Breastplate x1, Greaves x1, Gloves x1, Boots x1).
+                                </p>
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <!-- 3. WEAPONS, WINGS, PETS & ACCESSORIES (3-CARD GRID) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Card 1: Secret Teatime Weapon Skins -->
+                    <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-pink-400 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-tech uppercase tracking-wider text-pink-300">Weapon Skins • 8 Classes</span>
+                                <span class="text-xs font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">$11.99 / +1,750 Mil.</span>
+                            </div>
+                            <h3 class="font-cinzel text-lg font-bold text-white flex items-center gap-2" data-i18n="oct28_skin_c2_title">
+                                <i data-lucide="sword" class="w-5 h-5 text-pink-400"></i>
+                                New Weapon Skins: 'Secret Teatime' ($11.99 | +1,750 Mileage)
+                            </h3>
+                            <p class="text-xs text-slate-400" data-i18n="oct28_skin_c2_desc">Path: <em>[Shop] ➔ [Atelier] ➔ [Weapon/Wings/Pet] ➔ [Weapon Skin]</em>. Customizable: <strong>YES</strong>.</p>
+                            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-2">
+                                <p class="font-semibold text-pink-200">Available Archetypes for Every Class:</p>
+                                <p class="leading-relaxed" data-i18n="oct28_skin_c2_weapons">Greatsword (Gladiator), Longsword (Templar), Dagger (Assassin), Bow (Ranger), Spellbook (Sorcerer), Orb (Spiritmaster), Mace (Cleric), Staff (Chanter).</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 text-[11px] text-slate-400 border-t border-slate-800">
+                            <i data-lucide="palette" class="w-3.5 h-3.5 text-pink-400"></i>
+                            <span>Equipped inside Atelier Weapon Skin wardrobe.</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Wings & Pets -->
+                    <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-cyan-400 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-tech uppercase tracking-wider text-cyan-300">Wings & Companion Pets</span>
+                                <span class="text-xs font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">$19.99 / +2,900 Mil.</span>
+                            </div>
+                            <h3 class="font-cinzel text-lg font-bold text-white flex items-center gap-2" data-i18n="oct28_skin_c3_title">
+                                <i data-lucide="feather" class="w-5 h-5 text-cyan-400"></i>
+                                New Wings & Pets ($19.99 | +2,900 Mileage)
+                            </h3>
+                            <div class="space-y-2.5 text-xs">
+                                <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+                                    <span class="text-base">🪽</span>
+                                    <div>
+                                        <strong class="text-cyan-300 block">Maid Ribbon Wings (Wings Skin)</strong>
+                                        <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c3_wings">🪽 <strong>Maid Ribbon Wings (Wings Skin)</strong> — $19.99 (Limit: 1 per character, Customize: No).</p>
+                                    </div>
+                                </div>
+                                <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+                                    <span class="text-base">🔥</span>
+                                    <div>
+                                        <strong class="text-purple-300 block">Pet: Azure Flame Kumiho</strong>
+                                        <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c3_pet1">🔥 <strong>Pet: Azure Flame Kumiho</strong> — $19.99 (Limit: 1 per server, registered in <em>[Pet]</em> menu).</p>
+                                    </div>
+                                </div>
+                                <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 flex items-start gap-2.5">
+                                    <span class="text-base">🐶</span>
+                                    <div>
+                                        <strong class="text-pink-300 block">Pet: Glossy Pink Puppy</strong>
+                                        <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c3_pet2">🐶 <strong>Pet: Glossy Pink Puppy</strong> — $19.99 (Limit: 1 per server, registered in <em>[Pet]</em> menu).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 text-[11px] text-slate-400 border-t border-slate-800">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-cyan-400"></i>
+                            <span>Instant permanent account bind.</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Helms & Decor Accessories -->
+                    <div class="glass-card glass-card-hover rounded-2xl p-6 border-l-4 border-l-amber-400 space-y-4 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-tech uppercase tracking-wider text-amber-300">Helms, Glasses & Jewelry</span>
+                                <span class="text-xs font-bold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">300 Quna Each</span>
+                            </div>
+                            <h3 class="font-cinzel text-lg font-bold text-white flex items-center gap-2" data-i18n="oct28_skin_c4_title">
+                                <i data-lucide="gem" class="w-5 h-5 text-amber-400"></i>
+                                New Helms & Decor Accessories (300 Quna Each)
+                            </h3>
+                            <div class="space-y-2 text-xs text-slate-300">
+                                <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800">
+                                    <strong class="text-white block mb-0.5">🎭 Helms (Closet - Armor • Dyeable: YES):</strong>
+                                    <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c4_helms"><strong>2 Helms:</strong> Black Crow Mask & Dark Maid Hairband — 300 Quna each.</p>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800">
+                                    <strong class="text-white block mb-0.5">👓 Eyewear & Face Decor (Closet - Decor):</strong>
+                                    <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c4_glasses"><strong>3 Glasses:</strong> Red Devil Glasses (Limit 1/server), Silver Line Glasses, Silver Face Chain — 300 Quna each.</p>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800">
+                                    <strong class="text-white block mb-0.5">💍 Aesthetic Jewelry Sets:</strong>
+                                    <p class="text-slate-400 text-[11px]" data-i18n="oct28_skin_c4_jewels"><strong>6 Aesthetic Jewelry Pieces (3 Sets):</strong> Soaring, Rider's, Midnight Teatime.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2 text-[11px] text-slate-400 border-t border-slate-800">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+                            <span>Purchasable with in-game Quna.</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -3016,11 +3201,11 @@
                 "nav_drops": "Twitch Drops",
                 "nav_faq": "FAQ",
                 "hero_view_history": "View Past Updates Archive",
-                "tab_btn_ludra": "🐉 NOV 4: Ludra Awakens Raid Event",
+                "tab_btn_ludra": "🐉 NOV 4: Ludra Awakens",
                 "tab_btn_ludra_badge": "UPCOMING RAID",
-                "tab_btn_oct14": "🎃 OCT 14: Halloween & Abyss Patch",
+                "tab_btn_oct14": "🎃 OCT 14: Halloween & Abyss",
                 "tab_btn_oct14_badge": "ARCHIVE",
-                "tab_switcher_hint": "Switch between updates with zero page reload. Direct deep links supported (#oct28 / #ludra / #oct14).",
+                "tab_switcher_hint": "Instant Switch (#oct28 • #ludra • #oct14)",
                 "ludra_breadcrumb_hub": "AION 2 Hub",
                 "ludra_breadcrumb_events": "Events & Raids",
                 "ludra_breadcrumb_current": "Nov 4: Ludra Awakens",
@@ -3188,7 +3373,7 @@
                 "nav_oct28_skins": "🦊 New Skins",
                 "nav_oct28_qol": "Anti-Bot & Fixes",
                 "nav_oct28_faq": "FAQ",
-                "tab_btn_oct28": "⚔️ OCT 28: Hard Modes, Class Buffs & Skins",
+                "tab_btn_oct28": "⚔️ OCT 28: Hard Modes & Skins",
                 "tab_btn_oct28_badge": "NEW PATCH",
                 "oct28_breadcrumb_hub": "AION 2 Hub",
                 "oct28_breadcrumb_updates": "Major Updates",
@@ -3300,6 +3485,21 @@
                 "oct28_xp3": "Open Hidden Cubes: <strong>50 XP</strong>",
                 "oct28_xp4": "Successful Gathering / Crafting: <strong>30 XP</strong>",
                 "oct28_xp5": "Soulbind Gear: <strong>20 XP</strong> | Enchant or Extract Gear: <strong>10 XP</strong>",
+                "oct28_skin_dyeable_tag": "🎨 Dyeable: YES (Palette Customization)",
+                "oct28_skin_vulpine_male": "Male Model — Divine Fox Regalia",
+                "oct28_skin_vulpine_female": "Female Model — Celestial Kitsune",
+                "oct28_skin_vulpine_det1": "Fox Mask",
+                "oct28_skin_vulpine_det2": "Embroidered Robe",
+                "oct28_skin_vulpine_det3": "Nine Tails Cloak",
+                "oct28_skin_vulpine_det4": "Armored Boots",
+                "oct28_skin_maid_pose1": "Victorian Battle Maid (Front Pose)",
+                "oct28_skin_maid_pose2": "Classic Frilled Apron (Action Pose)",
+                "oct28_skin_maid_det1": "Frilled Hairband",
+                "oct28_skin_maid_det2": "Pinafore Apron",
+                "oct28_skin_maid_det3": "Lace Cuffs",
+                "oct28_skin_maid_det4": "Ribbon Pumps",
+                "oct28_skin_macro_details": "Craftsmanship & Macro Details",
+                "oct28_skin_includes": "Included in Outfit Set:",
                 "oct28_skins_sub": "Official Atelier Collection & Daeva Lookbook Vol. 3",
                 "oct28_skins_title": "New Skins AION 2 — October 28, 2026 (Daeva Lookbook Vol. 3)",
                 "oct28_skins_period": "Sale Period: October 28, 2026 – November 11, 2026 (CET) • (Oct 27 PDT – Nov 10 PST)",
@@ -3487,9 +3687,9 @@
                 "hero_view_history": "Vedi Archivio Aggiornamenti",
                 "tab_btn_ludra": "🐉 4 NOV: Risveglio di Ludra",
                 "tab_btn_ludra_badge": "RAID IMMINENTE",
-                "tab_btn_oct14": "🎃 14 OTT: Patch Halloween & Abisso",
+                "tab_btn_oct14": "🎃 14 OTT: Halloween & Abisso",
                 "tab_btn_oct14_badge": "ARCHIVIO",
-                "tab_switcher_hint": "Passa da un aggiornamento all'altro senza ricaricare la pagina. Supporto deep link diretto (#oct28 / #ludra / #oct14).",
+                "tab_switcher_hint": "Switch Rapido (#oct28 • #ludra • #oct14)",
                 "ludra_breadcrumb_hub": "Hub AION 2",
                 "ludra_breadcrumb_events": "Eventi & Raid",
                 "ludra_breadcrumb_current": "4 Nov: Risveglio di Ludra",
@@ -3657,7 +3857,7 @@
                 "nav_oct28_skins": "🦊 Nuove Skin",
                 "nav_oct28_qol": "Anti-Bot & Fix",
                 "nav_oct28_faq": "FAQ",
-                "tab_btn_oct28": "⚔️ 28 OTT: Hard Mode, Buff Classi & Skin",
+                "tab_btn_oct28": "⚔️ 28 OTT: Hard Mode & Skin",
                 "tab_btn_oct28_badge": "NUOVA PATCH",
                 "oct28_breadcrumb_hub": "Hub AION 2",
                 "oct28_breadcrumb_updates": "Aggiornamenti Principali",
@@ -3769,6 +3969,21 @@
                 "oct28_xp3": "Apri Hidden Cube: <strong>50 XP</strong>",
                 "oct28_xp4": "Raccolta / Crafting riuscito: <strong>30 XP</strong>",
                 "oct28_xp5": "Soulbind equip: <strong>20 XP</strong> | Incanta o Estrai equip: <strong>10 XP</strong>",
+                "oct28_skin_dyeable_tag": "🎨 Tingibile: SÌ (Personalizzazione Palette)",
+                "oct28_skin_vulpine_male": "Modello Maschile — Regalia della Volpe Divina",
+                "oct28_skin_vulpine_female": "Modello Femminile — Kitsune Celestiale",
+                "oct28_skin_vulpine_det1": "Maschera Volpe",
+                "oct28_skin_vulpine_det2": "Corazza Ricamata",
+                "oct28_skin_vulpine_det3": "Mantello Nove Code",
+                "oct28_skin_vulpine_det4": "Stivali Corazzati",
+                "oct28_skin_maid_pose1": "Battle Maid Gotica (Posa Frontale)",
+                "oct28_skin_maid_pose2": "Grembiule con Volant (Posa Azione)",
+                "oct28_skin_maid_det1": "Cerchietto con Volant",
+                "oct28_skin_maid_det2": "Grembiule & Corsetto",
+                "oct28_skin_maid_det3": "Polsini in Pizzo",
+                "oct28_skin_maid_det4": "Scarpe con Nastro",
+                "oct28_skin_macro_details": "Dettagli Macro & Sartoria",
+                "oct28_skin_includes": "Incluso nel Set Outfit:",
                 "oct28_skins_sub": "Collezione Ufficiale Atelier & Daeva Lookbook Vol. 3",
                 "oct28_skins_title": "New Skins AION 2 — October 28, 2026 (Daeva Lookbook Vol. 3)",
                 "oct28_skins_period": "Periodo di Vendita: 28 Ottobre 2026 – 11 Novembre 2026 (CET) • (27 Ott PDT – 10 Nov PST)",
@@ -3848,7 +4063,7 @@
             const patchSelector = document.getElementById('patch-selector');
 
             // Default Inactive Style
-            const inactiveClass = "flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-slate-900/60 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-500/50";
+            const inactiveClass = "shrink-0 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-slate-900/60 border border-slate-700 text-slate-300 hover:text-white hover:border-cyan-500/50";
 
             if (tabId === 'oct14') {
                 if (tabOct28) { tabOct28.classList.add('hidden'); tabOct28.classList.remove('block'); }
@@ -3857,7 +4072,7 @@
 
                 if (btnOct28) btnOct28.className = inactiveClass;
                 if (btnLudra) btnLudra.className = inactiveClass;
-                if (btnOct14) btnOct14.className = "flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-gradient-to-r from-amber-500/20 to-aion-pumpkin/20 border-2 border-amber-400 text-white shadow-lg shadow-amber-500/20";
+                if (btnOct14) btnOct14.className = "shrink-0 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-gradient-to-r from-amber-500/20 to-aion-pumpkin/20 border-2 border-amber-400 text-white shadow-lg shadow-amber-500/20";
 
                 if (patchSelector) patchSelector.value = '#oct14';
                 if (!window.location.hash.startsWith('#oct14')) {
@@ -3870,7 +4085,7 @@
 
                 if (btnOct28) btnOct28.className = inactiveClass;
                 if (btnOct14) btnOct14.className = inactiveClass;
-                if (btnLudra) btnLudra.className = "flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-gradient-to-r from-red-500/20 via-purple-500/20 to-cyan-500/20 border-2 border-cyan-400 text-white shadow-lg shadow-cyan-500/20";
+                if (btnLudra) btnLudra.className = "shrink-0 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-gradient-to-r from-red-500/20 via-purple-500/20 to-cyan-500/20 border-2 border-cyan-400 text-white shadow-lg shadow-cyan-500/20";
 
                 if (patchSelector) patchSelector.value = '#ludra';
                 if (!window.location.hash.startsWith('#ludra')) {
@@ -3884,7 +4099,7 @@
 
                 if (btnLudra) btnLudra.className = inactiveClass;
                 if (btnOct14) btnOct14.className = inactiveClass;
-                if (btnOct28) btnOct28.className = "flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-gradient-to-r from-cyan-500/20 to-aion-purple/20 border-2 border-cyan-400 text-white shadow-lg shadow-cyan-500/20";
+                if (btnOct28) btnOct28.className = "shrink-0 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-tech font-bold uppercase tracking-wider transition-all duration-200 bg-gradient-to-r from-cyan-500/20 to-aion-purple/20 border-2 border-cyan-400 text-white shadow-lg shadow-cyan-500/20";
 
                 if (patchSelector) patchSelector.value = '#oct28';
                 if (!window.location.hash.startsWith('#oct28') && !window.location.hash.startsWith('#patch-oct28') && window.location.hash !== '') {
