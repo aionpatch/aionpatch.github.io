@@ -29,7 +29,7 @@ A modern, fast, zero-dependency static web portal for tracking official **AION 2
 <a id="project-overview"></a>
 ## Project Overview
 
-**aionpatch.github.io** serves as a centralized community hub providing clear, structured breakdowns of official AION 2 announcements, balance updates, banwaves, and major raid releases (such as *Ludra Awakens*).
+**aionpatch.github.io** serves as a centralized community hub providing clear, structured breakdowns of official AION 2 announcements, balance updates, banwaves, major raid releases (*Ludra Awakens*), and the **October 28, 2026 Major Patch** featuring 2,700 iLvl Hard Modes, +1,500/+1,000 Class HP buffs, Crafted Amplify Lv. 5, and the **Daeva Lookbook Vol. 3** new skins showcase.
 
 The site is built entirely as a static client-side web application hosted on GitHub Pages, ensuring high availability, zero server maintenance overhead, and instant load times.
 
